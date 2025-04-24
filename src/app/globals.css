@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 250, 250, 250;
+  --background-end-rgb: 255, 255, 255;
+  
+  /* Custom color palette for Micro-Ritual Designer */
+  --primary: 121, 116, 169; /* Lavender */
+  --primary-light: 190, 187, 220;
+  --secondary: 92, 131, 116; /* Sage Green */
+  --accent: 235, 188, 154; /* Soft Terracotta */
+  --neutral-light: 245, 245, 245;
+  --neutral: 229, 229, 229;
+  --neutral-dark: 107, 114, 128;
+  --text: 51, 51, 51;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 30, 30, 35;
+    --background-end-rgb: 15, 15, 20;
+    
+    /* Dark mode adjustments */
+    --primary-light: 121, 116, 169;
+    --neutral-light: 45, 45, 50;
+    --neutral: 60, 60, 65;
+    --text: 229, 229, 229;
+  }
+}
+
+body {
+  color: rgb(var(--text));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl font-semibold mb-4;
+  }
+  h2 {
+    @apply text-2xl font-semibold mb-3;
+  }
+  h3 {
+    @apply text-xl font-medium mb-2;
+  }
+  p {
+    @apply mb-4;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary/90 transition-colors;
+  }
+  
+  .btn-outline {
+    @apply px-4 py-2 border border-gray-300 text-primary rounded-md hover:bg-primary/10 transition-colors;
+  }
+  
+  .card {
+    @apply bg-white p-6 rounded-lg shadow-sm;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50;
+  }
+  
+  .ritual-card {
+    @apply p-4 border border-gray-300 rounded-lg hover:border-primary/50 transition-colors cursor-pointer;
+  }
+}
+
+/* Custom animations */
+@keyframes gentle-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: gentle-fade-in 0.8s ease-in-out;
+}
+
+/* Utility classes for micro-ritual specific styling */
+.ritual-icon {
+  @apply w-10 h-10 flex items-center justify-center rounded-full bg-primary/20 text-primary;
+}
+
+.value-tag {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/20 text-primary;
+}
+
+.duration-indicator {
+  @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-secondary/20 text-secondary;
+}
