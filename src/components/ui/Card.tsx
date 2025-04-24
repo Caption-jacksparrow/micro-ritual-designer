@@ -15,7 +15,7 @@ export default function Card({
   onClick, 
   hoverable = false 
 }: CardProps) {
-  const baseClasses = 'bg-white dark:bg-neutral-light p-6 rounded-lg shadow-sm';
+  const baseClasses = 'bg-white p-6 rounded-lg shadow-sm';
   const hoverClasses = hoverable ? 'hover:shadow-md transition-shadow cursor-pointer' : '';
   const combinedClasses = `${baseClasses} ${hoverClasses} ${className}`;
   
