@@ -22,7 +22,7 @@ export default function Button({
   const variantClasses = {
     primary: 'bg-primary text-white hover:bg-primary/90',
     secondary: 'bg-secondary text-white hover:bg-secondary/90',
-    outline: 'border border-primary text-primary hover:bg-primary/10',
+    outline: 'border border-gray-300 text-primary hover:bg-primary/10',
   };
   
   const sizeClasses = {
